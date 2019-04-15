@@ -1,0 +1,14 @@
+#OS
+/**/.DS_Store
+
+#Git Merge
+*.orig
+
+#Xcode
+/**/xcuserdata
+
+#AppCode
+/.idea/
+
+#CocoaPods
+/Pods/
