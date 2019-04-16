@@ -1,5 +1,19 @@
 import UIKit
 
+protocol OperatorGridDelegate: class {
+    func didTap(number: Int)
+    
+    func didTapClear()
+    func didTapPlusMinus()
+    func didTapPercentage()
+    func didTapDivide()
+    func didTapMultiply()
+    func didTapSubtraction()
+    func didTapAddition()
+    func didTapDot()
+    func didTapEqual()
+}
+
 class OperatorGrid: UIView {
     
     private let verticalStackView = UIStackView().apply {
@@ -34,6 +48,8 @@ class OperatorGrid: UIView {
         $0.spacing = 4
     }
     
+    weak var gridDelegate: OperatorGridDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -49,7 +65,9 @@ class OperatorGrid: UIView {
     
     private func generateOperators() {
         for index in 0...9 {
-            let _operator = OperatorSquare(text: "\(index)")
+            let _operator = OperatorSquare(text: "\(index)", onTap: { [weak self] in
+                self?.gridDelegate?.didTap(number: index)
+            })
 
             let stackView: UIStackView
             if index == 0 {
@@ -65,15 +83,33 @@ class OperatorGrid: UIView {
             stackView.addArrangedSubview(_operator)
         }
         
-        let clear = OperatorSquare(text: "C")
-        let plusMinus = OperatorSquare(text: "\u{B1}")
-        let percentage = OperatorSquare(text: "\u{25}")
-        let divide = OperatorSquare(text: "\u{F7}")
-        let multiply = OperatorSquare(text: "\u{D7}")
-        let subtraction = OperatorSquare(text: "\u{2212}")
-        let addition = OperatorSquare(text: "\u{2B}")
-        let dot = OperatorSquare(text: "\u{22C5}")
-        let equal = OperatorSquare(text: "\u{3D}")
+        let clear = OperatorSquare(text: "C", onTap: { [weak self] in
+            self?.gridDelegate?.didTapClear()
+        })
+        let plusMinus = OperatorSquare(text: "\u{B1}", onTap: { [weak self] in
+            self?.gridDelegate?.didTapPlusMinus()
+        })
+        let percentage = OperatorSquare(text: "\u{25}", onTap: { [weak self] in
+            self?.gridDelegate?.didTapPercentage()
+        })
+        let divide = OperatorSquare(text: "\u{F7}", onTap: { [weak self] in
+            self?.gridDelegate?.didTapDivide()
+        })
+        let multiply = OperatorSquare(text: "\u{D7}", onTap: { [weak self] in
+            self?.gridDelegate?.didTapMultiply()
+        })
+        let subtraction = OperatorSquare(text: "\u{2212}", onTap: { [weak self] in
+            self?.gridDelegate?.didTapSubtraction()
+        })
+        let addition = OperatorSquare(text: "\u{2B}", onTap: { [weak self] in
+            self?.gridDelegate?.didTapAddition()
+        })
+        let dot = OperatorSquare(text: "\u{22C5}", onTap: { [weak self] in
+            self?.gridDelegate?.didTapDot()
+        })
+        let equal = OperatorSquare(text: "\u{3D}", onTap: { [weak self] in
+            self?.gridDelegate?.didTapEqual()
+        })
         
         self.horizontalStackView1.addArrangedSubview(clear)
         self.horizontalStackView1.addArrangedSubview(plusMinus)

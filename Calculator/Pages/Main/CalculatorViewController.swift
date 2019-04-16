@@ -11,8 +11,9 @@ class CalculatorViewController: UIViewController {
     private var display = Display().apply {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
-    private var operatorGrid = OperatorGrid().apply {
+    private lazy var operatorGrid = OperatorGrid().apply {
         $0.backgroundColor = .purple
+        $0.gridDelegate = self
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
 
@@ -21,6 +22,39 @@ class CalculatorViewController: UIViewController {
         
         self.setupViews()
         self.setupConstraints()
+    }
+}
+
+// MARK: - Operator grid delegates
+extension CalculatorViewController: OperatorGridDelegate {
+    func didTap(number: Int) {
+    }
+    
+    func didTapClear() {
+    }
+    
+    func didTapPlusMinus() {
+    }
+    
+    func didTapPercentage() {
+    }
+    
+    func didTapDivide() {
+    }
+    
+    func didTapMultiply() {
+    }
+    
+    func didTapSubtraction() {
+    }
+    
+    func didTapAddition() {
+    }
+    
+    func didTapDot() {
+    }
+    
+    func didTapEqual() {
     }
 }
 
