@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D2C2F062265081A00380236 /* StdMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C2F052265081A00380236 /* StdMethods.swift */; };
+		6D2C2F092265089500380236 /* OperatorGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C2F072265089500380236 /* OperatorGrid.swift */; };
+		6D2C2F0A2265089500380236 /* OperatorSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2C2F082265089500380236 /* OperatorSquare.swift */; };
 		6D8B785E2264EF8100B65877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8B785D2264EF8100B65877 /* AppDelegate.swift */; };
 		6D8B78602264EF8100B65877 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8B785F2264EF8100B65877 /* CalculatorViewController.swift */; };
 		6D8B78652264EF8200B65877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8B78642264EF8200B65877 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		6D2C2F052265081A00380236 /* StdMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StdMethods.swift; sourceTree = "<group>"; };
+		6D2C2F072265089500380236 /* OperatorGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperatorGrid.swift; path = Calculator/Views/OperatorGrid.swift; sourceTree = SOURCE_ROOT; };
+		6D2C2F082265089500380236 /* OperatorSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperatorSquare.swift; path = Calculator/Views/OperatorSquare.swift; sourceTree = SOURCE_ROOT; };
 		6D8B785A2264EF8100B65877 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8B785D2264EF8100B65877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D8B785F2264EF8100B65877 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 		6D8B78732264F14B00B65877 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6D2C2F072265089500380236 /* OperatorGrid.swift */,
+				6D2C2F082265089500380236 /* OperatorSquare.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,7 +189,9 @@
 			files = (
 				6D2C2F062265081A00380236 /* StdMethods.swift in Sources */,
 				6D8B78602264EF8100B65877 /* CalculatorViewController.swift in Sources */,
+				6D2C2F0A2265089500380236 /* OperatorSquare.swift in Sources */,
 				6D8B785E2264EF8100B65877 /* AppDelegate.swift in Sources */,
+				6D2C2F092265089500380236 /* OperatorGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
