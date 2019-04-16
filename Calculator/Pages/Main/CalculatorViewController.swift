@@ -28,33 +28,63 @@ class CalculatorViewController: UIViewController {
 // MARK: - Operator grid delegates
 extension CalculatorViewController: OperatorGridDelegate {
     func didTap(number: Int) {
+        let result = Calculator.shared.didTap(number: number)
+        
+        self.display.set(result: result)
     }
     
     func didTapClear() {
+        let result = Calculator.shared.didTapClear()
+        
+        self.display.set(result: result)
     }
     
     func didTapPlusMinus() {
+        let result = Calculator.shared.didTapPlusMinus()
+        
+        self.display.set(result: result)
     }
     
     func didTapPercentage() {
+        let result = Calculator.shared.didTapPercentage()
+        
+        self.display.set(result: result)
     }
     
     func didTapDivide() {
+        let result = Calculator.shared.didTapDivide()
+        
+        self.display.set(result: result)
     }
     
     func didTapMultiply() {
+        let result = Calculator.shared.didTapMultiply()
+        
+        self.display.set(result: result)
     }
     
     func didTapSubtraction() {
+        let result = Calculator.shared.didTapSubtraction()
+        
+        self.display.set(result: result)
     }
     
     func didTapAddition() {
+        let result = Calculator.shared.didTapAddition()
+        
+        self.display.set(result: result)
     }
     
     func didTapDot() {
+        let result = Calculator.shared.didTapDot()
+        
+        self.display.set(result: result)
     }
     
     func didTapEqual() {
+        let result = Calculator.shared.didTapEqual()
+        
+        self.display.set(result: result)
     }
 }
 
