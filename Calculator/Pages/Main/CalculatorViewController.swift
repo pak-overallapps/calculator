@@ -3,16 +3,17 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     private var titleView = UILabel().apply {
-        $0.backgroundColor = .green
+        $0.backgroundColor = .clear
         $0.textAlignment = .center
         $0.text = "Over-engineered calculator"
+        $0.textColor = .white
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     private var display = Display().apply {
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     private lazy var operatorGrid = OperatorGrid().apply {
-        $0.backgroundColor = .purple
+        $0.backgroundColor = .clear
         $0.gridDelegate = self
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -127,7 +128,7 @@ extension CalculatorViewController {
         self.edgesForExtendedLayout = .all
         self.extendedLayoutIncludesOpaqueBars = true
         
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .black
         
         self.view.addSubview(self.titleView)
         self.view.addSubview(self.display)

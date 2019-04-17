@@ -3,9 +3,10 @@ import UIKit
 class Display: UIView {
     
     private let resultLabel = UILabel().apply {
-        $0.backgroundColor = .red
+        $0.backgroundColor = .clear
         $0.textAlignment = .right
         $0.text = "0"
+        $0.textColor = .white
         $0.font = .systemFont(ofSize: 58)
         $0.adjustsFontSizeToFitWidth = true
         $0.minimumScaleFactor = 0.2
@@ -32,7 +33,7 @@ class Display: UIView {
 // MARK: - UI
 extension Display {
     private func setupViews() {
-        self.backgroundColor = .purple
+        self.backgroundColor = .clear
         
         self.addSubview(self.resultLabel)
     }

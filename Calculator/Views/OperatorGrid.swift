@@ -16,36 +16,38 @@ protocol OperatorGridDelegate: class {
 
 class OperatorGrid: UIView {
     
+    private static let spacing: CGFloat = 10
+    
     private let verticalStackView = UIStackView().apply {
         $0.distribution = .fillEqually
         $0.axis = .vertical
-        $0.spacing = 4
+        $0.spacing = OperatorGrid.spacing
         $0.translatesAutoresizingMaskIntoConstraints = false
     }
     private let horizontalStackView1 = UIStackView().apply {
         $0.distribution = .fillEqually
         $0.axis = .horizontal
-        $0.spacing = 4
+        $0.spacing = OperatorGrid.spacing
     }
     private let horizontalStackView2 = UIStackView().apply {
         $0.distribution = .fillEqually
         $0.axis = .horizontal
-        $0.spacing = 4
+        $0.spacing = OperatorGrid.spacing
     }
     private let horizontalStackView3 = UIStackView().apply {
         $0.distribution = .fillEqually
         $0.axis = .horizontal
-        $0.spacing = 4
+        $0.spacing = OperatorGrid.spacing
     }
     private let horizontalStackView4 = UIStackView().apply {
         $0.distribution = .fillEqually
         $0.axis = .horizontal
-        $0.spacing = 4
+        $0.spacing = OperatorGrid.spacing
     }
     private let horizontalStackView5 = UIStackView().apply {
         $0.distribution = .fillProportionally
         $0.axis = .horizontal
-        $0.spacing = 4
+        $0.spacing = OperatorGrid.spacing
     }
     
     weak var gridDelegate: OperatorGridDelegate?
@@ -65,7 +67,7 @@ class OperatorGrid: UIView {
     
     private func generateOperators() {
         for index in 0...9 {
-            let _operator = OperatorSquare(text: "\(index)", onTap: { [weak self] in
+            let _operator = OperatorSquare(theme: .black, text: "\(index)", onTap: { [weak self] in
                 self?.gridDelegate?.didTap(number: index)
             })
 
@@ -83,31 +85,31 @@ class OperatorGrid: UIView {
             stackView.addArrangedSubview(_operator)
         }
         
-        let clear = OperatorSquare(text: Operator.clear.rawValue, onTap: { [weak self] in
+        let clear = OperatorSquare(theme: .gray, text: Operator.clear.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapClear()
         })
-        let plusMinus = OperatorSquare(text: Operator.plusMinus.rawValue, onTap: { [weak self] in
+        let plusMinus = OperatorSquare(theme: .gray, text: Operator.plusMinus.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapPlusMinus()
         })
-        let percentage = OperatorSquare(text: Operator.percentage.rawValue, onTap: { [weak self] in
+        let percentage = OperatorSquare(theme: .gray, text: Operator.percentage.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapPercentage()
         })
-        let divide = OperatorSquare(text: Operator.divide.rawValue, onTap: { [weak self] in
+        let divide = OperatorSquare(theme: .orange, text: Operator.divide.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapDivide()
         })
-        let multiply = OperatorSquare(text: Operator.multiply.rawValue, onTap: { [weak self] in
+        let multiply = OperatorSquare(theme: .orange, text: Operator.multiply.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapMultiply()
         })
-        let subtraction = OperatorSquare(text: Operator.subtraction.rawValue, onTap: { [weak self] in
+        let subtraction = OperatorSquare(theme: .orange, text: Operator.subtraction.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapSubtraction()
         })
-        let addition = OperatorSquare(text: Operator.addition.rawValue, onTap: { [weak self] in
+        let addition = OperatorSquare(theme: .orange, text: Operator.addition.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapAddition()
         })
-        let dot = OperatorSquare(text: Operator.dot.rawValue, onTap: { [weak self] in
+        let dot = OperatorSquare(theme: .black, text: Operator.dot.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapDot()
         })
-        let equal = OperatorSquare(text: Operator.equal.rawValue, onTap: { [weak self] in
+        let equal = OperatorSquare(theme: .orange, text: Operator.equal.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapEqual()
         })
         
