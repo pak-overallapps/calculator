@@ -22,6 +22,36 @@ class CalculatorViewController: UIViewController {
         
         self.setupViews()
         self.setupConstraints()
+        
+        self.fetchSavedData()
+    }
+    
+    private func fetchSavedData() {
+        // TODO: Handle disposable
+        _ = CalculatorAPI.get()
+            .subscribe(onNext: { (json) in
+                print("CalculatorVC GET succeeded:\n\(json.prettyPrintedString())")
+            }, onError: { (error) in
+                print("CalculatorVC GET failed:\n\(error)")
+            }, onCompleted: {
+                print("CalculatorVC GET completed")
+            }, onDisposed: {
+                print("CalculatorVC GET disposed")
+            })
+    }
+    
+    private func postResult(result: String) {
+        // TODO: Handle disposable
+        _ = CalculatorAPI.post(result: result)
+            .subscribe(onNext: { (json) in
+                print("CalculatorVC POST succeeded:\n\(json.prettyPrintedString())")
+            }, onError: { (error) in
+                print("CalculatorVC POST failed:\n\(error)")
+            }, onCompleted: {
+                print("CalculatorVC POST completed")
+            }, onDisposed: {
+                print("CalculatorVC POST disposed")
+            })
     }
 }
 
@@ -85,6 +115,9 @@ extension CalculatorViewController: OperatorGridDelegate {
         let result = Calculator.shared.didTapEqual()
         
         self.display.set(result: result)
+        
+        // TODO POST result
+//        self.postResult(result: result)
     }
 }
 

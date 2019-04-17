@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D0279502267CC6A002E7C85 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02794F2267CC6A002E7C85 /* RequestBuilder.swift */; };
+		6D0279522267CCBC002E7C85 /* CalculatorAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0279512267CCBC002E7C85 /* CalculatorAPI.swift */; };
 		6D0279542267CD66002E7C85 /* JsonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0279532267CD66002E7C85 /* JsonExtension.swift */; };
 		6D148D8B22679AE8001179BD /* CalculatorTestsAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D148D8A22679AE8001179BD /* CalculatorTestsAddition.swift */; };
 		6D148D932267A474001179BD /* CalculatorTestsSubtraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D148D922267A474001179BD /* CalculatorTestsSubtraction.swift */; };
@@ -44,6 +45,7 @@
 		36BD3EFD2659B3F2EDD1969B /* Pods-CalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalculatorTests.debug.xcconfig"; path = "Target Support Files/Pods-CalculatorTests/Pods-CalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		56F6E68A42CC677E35C97F9B /* Pods-Calculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator.debug.xcconfig"; path = "Target Support Files/Pods-Calculator/Pods-Calculator.debug.xcconfig"; sourceTree = "<group>"; };
 		6D02794F2267CC6A002E7C85 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		6D0279512267CCBC002E7C85 /* CalculatorAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorAPI.swift; sourceTree = "<group>"; };
 		6D0279532267CD66002E7C85 /* JsonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonExtension.swift; sourceTree = "<group>"; };
 		6D148D8822679AE8001179BD /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D148D8A22679AE8001179BD /* CalculatorTestsAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTestsAddition.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				6D3E43522267CBC200BFFA1F /* NetworkManager.swift */,
 				6D02794F2267CC6A002E7C85 /* RequestBuilder.swift */,
+				6D0279512267CCBC002E7C85 /* CalculatorAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -388,12 +391,18 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Calculator/Pods-Calculator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -423,6 +432,7 @@
 				6D2C2F062265081A00380236 /* StdMethods.swift in Sources */,
 				6D8B78602264EF8100B65877 /* CalculatorViewController.swift in Sources */,
 				6D8746932265D4B3004C37BA /* Calculator.swift in Sources */,
+				6D0279522267CCBC002E7C85 /* CalculatorAPI.swift in Sources */,
 				6D2C2F0A2265089500380236 /* OperatorSquare.swift in Sources */,
 				6D0279502267CC6A002E7C85 /* RequestBuilder.swift in Sources */,
 				6D8B785E2264EF8100B65877 /* AppDelegate.swift in Sources */,
