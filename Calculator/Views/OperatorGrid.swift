@@ -83,31 +83,31 @@ class OperatorGrid: UIView {
             stackView.addArrangedSubview(_operator)
         }
         
-        let clear = OperatorSquare(text: "C", onTap: { [weak self] in
+        let clear = OperatorSquare(text: Operator.clear.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapClear()
         })
-        let plusMinus = OperatorSquare(text: "\u{B1}", onTap: { [weak self] in
+        let plusMinus = OperatorSquare(text: Operator.plusMinus.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapPlusMinus()
         })
-        let percentage = OperatorSquare(text: "\u{25}", onTap: { [weak self] in
+        let percentage = OperatorSquare(text: Operator.percentage.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapPercentage()
         })
-        let divide = OperatorSquare(text: "\u{F7}", onTap: { [weak self] in
+        let divide = OperatorSquare(text: Operator.divide.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapDivide()
         })
-        let multiply = OperatorSquare(text: "\u{D7}", onTap: { [weak self] in
+        let multiply = OperatorSquare(text: Operator.multiply.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapMultiply()
         })
-        let subtraction = OperatorSquare(text: "\u{2212}", onTap: { [weak self] in
+        let subtraction = OperatorSquare(text: Operator.subtraction.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapSubtraction()
         })
-        let addition = OperatorSquare(text: "\u{2B}", onTap: { [weak self] in
+        let addition = OperatorSquare(text: Operator.addition.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapAddition()
         })
-        let dot = OperatorSquare(text: "\u{22C5}", onTap: { [weak self] in
+        let dot = OperatorSquare(text: Operator.dot.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapDot()
         })
-        let equal = OperatorSquare(text: "\u{3D}", onTap: { [weak self] in
+        let equal = OperatorSquare(text: Operator.equal.rawValue, onTap: { [weak self] in
             self?.gridDelegate?.didTapEqual()
         })
         
