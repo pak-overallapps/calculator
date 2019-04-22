@@ -1,3 +1,4 @@
+import RxSwift
 import UIKit
 
 class CalculatorViewController: UIViewController {
@@ -30,6 +31,8 @@ class CalculatorViewController: UIViewController {
     private func fetchSavedData() {
         // TODO: Handle disposable
         _ = CalculatorAPI.get()
+            .subscribeOn(ConcurrentDispatchQueueScheduler.background)
+            .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { (json) in
                 print("CalculatorVC GET succeeded:\n\(json.prettyPrintedString())")
             }, onError: { (error) in
@@ -44,6 +47,8 @@ class CalculatorViewController: UIViewController {
     private func postResult(result: String) {
         // TODO: Handle disposable
         _ = CalculatorAPI.post(result: result)
+            .subscribeOn(ConcurrentDispatchQueueScheduler.background)
+            .observeOn(MainScheduler.asyncInstance)
             .subscribe(onNext: { (json) in
                 print("CalculatorVC POST succeeded:\n\(json.prettyPrintedString())")
             }, onError: { (error) in
